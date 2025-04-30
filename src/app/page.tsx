@@ -9,6 +9,7 @@ import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
+  TikTokIcon,
   XIcon,
 } from '@/components/SocialIcons'
 import logoAirbnb from '@/images/logos/airbnb.svg'
@@ -266,58 +267,50 @@ function Photos() {
 }
 
 export default async function Home() {
-  let articles = (await getAllArticles()).slice(0, 4)
-
   return (
     <>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Software engineer, enrolled agent, and avid reader.
+            Engineer, tax accountant, and amateur anthropologist.
           </h1>
-          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-600 sm:text-3xl dark:text-zinc-400">
-            Mapping the codes of taxes, wealth, and life
-          </h2>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&apos;m Spencer, a software designer and entrepreneur based in New
-            York City. I&apos;m the founder and CEO of Planetaria, where we
-            develop technologies that empower regular people to explore space on
-            their own terms.
+            I&apos;m Austin, a software engineer and tax practitioner in Texas.
+            Most of my days are spent reading a variety of books (although
+            always non-fiction), exploring the environment around me (on foot
+            whenever possible), or in some kind fitness activity (always in
+            pursuit of a goal).
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink href="#" aria-label="Follow on X" icon={XIcon} />
             <SocialLink
-              href="#"
+              href="https://x.com/AustinAI"
+              aria-label="Follow on X"
+              icon={XIcon}
+            />
+            <SocialLink
+              href="https://www.instagram.com/aj_builds_ai/"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
             <SocialLink
-              href="#"
+              href="https://github.com/AustonianAI"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="#"
+              href="https://www.linkedin.com/in/austinai/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
+            />
+            <SocialLink
+              href="https://www.tiktok.com/@austin_ai"
+              aria-label="Follow on TikTok"
+              icon={TikTokIcon}
             />
           </div>
         </div>
       </Container>
       <Photos />
-      <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))}
-          </div>
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
-            <Resume />
-          </div>
-        </div>
-      </Container>
     </>
   )
 }

@@ -11,11 +11,14 @@ export const metadata: Metadata = {
     default: 'Austin Johnson - Software Engineer | Enrolled Agent',
   },
   description:
-    'I’m Austin, a software engineer and enrolled agent licensed to practice before the IRS.  Currently residing in Austin, TX, I enjoy solving problems related to tax, software, and finance.',
+    "I'm Austin, a software engineer and enrolled agent licensed to practice before the IRS.  Currently residing in Austin, TX, I enjoy solving problems related to tax, software, and finance.",
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
     },
+  },
+  icons: {
+    icon: '/favicon.ico',
   },
 }
 
